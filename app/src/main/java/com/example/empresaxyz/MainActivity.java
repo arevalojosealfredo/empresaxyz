@@ -51,9 +51,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public boolean validar(){
+        String error_cantidadcero, errorcantidadv;
+
+        error_cantidadcero=getResources().getString(R.string.error_cantidadcero);
+        errorcantidadv=getResources().getString(R.string.error_cantidadv);
+
+        if(cantidad.getText().toString().isEmpty()){
+            cantidad.setError(errorcantidadv);
+            cantidad.requestFocus();
+            return false;
+        }else if (Double.parseDouble(cantidad.getText().toString())==0){
+            cantidad.setError(error_cantidadcero);
+            cantidad.requestFocus();
+            return false;
+        }
+        return true;
+    }
+
+
     public void calculoDePago(View v){
         int mat, dij, tip, mon, valuni;
         double can, pag=0;
+
+        if(validar()){
+            can = parseDouble(cantidad.getText().toString());
+            mat = comboMaterial.getSelectedItemPosition();
+            dij = comboDije.getSelectedItemPosition();
+            tip = comboTipo.getSelectedItemPosition();
+            mon = comboMoneda.getSelectedItemPosition();
 
             switch (mat){
                 case 0:
