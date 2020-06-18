@@ -3,11 +3,13 @@ package com.example.empresaxyz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import static java.lang.Double.parseDouble;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,6 +50,154 @@ public class MainActivity extends AppCompatActivity {
         comboMoneda.setAdapter(adapterMoneda);
     }
 
-    
+
+    public void calculoDePago(View v){
+        int mat, dij, tip, mon, valuni;
+        double can, pag=0;
+
+            switch (mat){
+                case 0:
+                    switch (dij){
+                        case 0:
+                            switch (tip){
+                                case 0:
+                                    valuni=100;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni *can)*3200;
+                                            break;
+                                    }break;
+                                case 1:
+                                    valuni = 80;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                                case 2:
+                                    valuni = 70;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                            }break;
+                        case 1:
+                            switch (tip){
+                                case 0:
+                                    valuni = 120;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                                case 1:
+                                    valuni = 100;
+                                    switch (mon) {
+                                        case 0:
+                                            pag = valuni * can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni * can) * 3200;
+                                            break;
+                                    }break;
+                                case 2:
+                                    valuni = 90;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                            }break;
+                    }break;
+                case 1:
+                    switch (dij){
+                        case 0:
+                            switch (tip){
+                                case 0:
+                                    valuni = 90;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                                case 1:
+                                    valuni = 70;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                                case 2:
+                                    valuni = 50;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                            }break;
+                        case 1:
+                            switch (tip){
+                                case 0:
+                                    valuni = 110;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                                case 1:
+                                    valuni = 90;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                                case 2:
+                                    valuni = 80;
+                                    switch (mon){
+                                        case 0:
+                                            pag = valuni*can;
+                                            break;
+                                        case 1:
+                                            pag = (valuni*can)*3200;
+                                            break;
+                                    }break;
+                            }break;
+                    }break;
+            }
+
+            valorPagar.setText("" + pag);
+        }
+    }
 
 }
