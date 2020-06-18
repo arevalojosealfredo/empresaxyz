@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">empresaxyz</string>
+    <string name="titulo">Manillas</string>
+    <string name="cantidad">Cantidad a fijar</string>
 </resources>
